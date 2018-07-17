@@ -17,6 +17,8 @@ define(function () {
 			clearTimeout(timeout);
 			timeout = 0;
 			_reject(reason);
+			
+			return my_promise;
 		};
 
     		return my_promise;
