@@ -6,7 +6,7 @@ define(function () {
 		var _promise = new Promise(function (resolve, reject) {
 			_timeout = setTimeout(function(){
 				_timeout = 0;
-				resolve(this, timer);
+				resolve(timer);
 			}, timer);
 			_reject = reject;
 
