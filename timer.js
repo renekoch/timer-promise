@@ -12,7 +12,7 @@ define(function () {
 			_reject = reject;
 
 		});
-		my_promise.stopTimer = function(reason){
+		my_promise.clearTimeout = function(reason){
 			if (timeout) return;
 			clearTimeout(timeout);
 			timeout = 0;
