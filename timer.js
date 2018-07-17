@@ -1,7 +1,6 @@
 define(function () {
 	return function (timer) {
 		
-		var result = {};
 		var _reject;
 		var timeout;
 		var my_promise = new Promise(function (resolve, reject) {
