@@ -2,24 +2,24 @@ define(function () {
 	return function (timer) {
 		
 		var _reject;
-		var timeout;
-		var my_promise = new Promise(function (resolve, reject) {
-			timeout = setTimeout(function(){
-				timeout = 0;
+		var _timeout;
+		var _promise = new Promise(function (resolve, reject) {
+			_timeout = setTimeout(function(){
+				_timeout = 0;
 				resolve(this, timer);
 			}, timer);
 			_reject = reject;
 
 		});
-		my_promise.clearTimeout = function(reason){
-			if (timeout) return;
-			clearTimeout(timeout);
-			timeout = 0;
+		_promise.clearTimeout = function(reason){
+			if (_timeout) return;
+			clearTimeout(_timeout);
+			_timeout = 0;
 			_reject(reason);
 			
-			return my_promise;
+			return _promise;
 		};
 
-    		return my_promise;
+    		return _promise;
 	}
 });
